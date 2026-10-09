@@ -1,0 +1,445 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La casa a schiera — Emanuele Visone</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&family=Allura&display=swap');
+:root{--bg:#0b1013;--panel:#11191d;--glass:rgba(255,255,255,.07);--txt:#f5f2ea;--muted:#aeb8b6;--lime:#b8d49a;--blue:#82b8c9;--line:rgba(255,255,255,.13)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 10%,#1b3035 0,#0b1013 35%),var(--bg);color:var(--txt);font-family:Manrope,Arial,sans-serif}
+nav{position:fixed;z-index:20;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:19px 5vw;background:rgba(8,13,16,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+nav b{letter-spacing:.16em;font-size:12px}nav a{color:#dbe2df;text-decoration:none;margin-left:22px;font-size:12px}
+.hero{min-height:100vh;position:relative;display:flex;align-items:end;padding:8vw 6vw;background:linear-gradient(90deg,rgba(5,9,11,.82),rgba(5,9,11,.15)),url('https://pauljohnston.com/wp-content/uploads/004-5-1024x683.jpg') center/cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0b1013 0,transparent 38%)}
+.heroText{position:relative;z-index:2;max-width:900px}.eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:11px;color:var(--lime);font-weight:700}
+h1,h2{font-family:"Playfair Display",Georgia,serif;margin:10px 0;line-height:.98}h1{font-size:clamp(62px,10vw,145px)}h2{font-size:clamp(40px,6vw,78px)}
+.lead{font-size:clamp(17px,1.8vw,23px);line-height:1.55;color:#d9dfdc;max-width:750px}
+section{padding:110px 7vw}.split{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:center}.introcopy{font-size:19px;line-height:1.75;color:#c5ceca}
+.imageStrip{display:grid;grid-template-columns:1.3fr .7fr;gap:14px;margin-top:45px}.imageStrip img{width:100%;height:460px;object-fit:cover;border-radius:22px}
+.details{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:50px}
+details{background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.035));border:1px solid var(--line);border-radius:20px;padding:0 25px;transition:.35s;overflow:hidden}
+details:hover{transform:translateY(-4px);border-color:rgba(184,212,154,.55)}summary{cursor:pointer;list-style:none;padding:25px 0;font-size:18px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+summary:after{content:"+";font-size:28px;color:var(--lime);transition:.3s}details[open] summary:after{transform:rotate(45deg)}details .inside{animation:reveal .55s cubic-bezier(.2,.8,.2,1);padding:0 0 25px;color:#bfc9c5;line-height:1.7}
+details .inside b{color:var(--lime)}
+.detailImg{width:100%;height:230px;object-fit:cover;border-radius:16px;margin:4px 0 18px;opacity:0;transform:scale(.94) translateY(18px);filter:saturate(.75) brightness(.78);transition:.7s cubic-bezier(.2,.8,.2,1)}
+details[open] .detailImg{opacity:1;transform:scale(1) translateY(0);filter:saturate(1.08) brightness(1)}
+details[open]{background:linear-gradient(145deg,rgba(130,184,201,.13),rgba(184,212,154,.06));box-shadow:0 25px 70px rgba(0,0,0,.28)}
+details[open] summary{color:#fff}
+details[open] .inside{animation:reveal .6s cubic-bezier(.2,.8,.2,1)}
+@keyframes glow{0%,100%{box-shadow:0 0 0 rgba(184,212,154,0)}50%{box-shadow:0 0 38px rgba(184,212,154,.13)}}
+details:hover{animation:glow 2s ease-in-out infinite}
+.reveal{opacity:0;transform:translateY(45px) scale(.98);transition:1s cubic-bezier(.2,.8,.2,1)}
+.reveal.show{opacity:1;transform:none}
+@keyframes reveal{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.procon{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:45px}.procon details{min-height:90px}.photo{width:100%;height:600px;object-fit:cover;border-radius:26px}
+.case{background:linear-gradient(145deg,#132126,#0b1013)}.gallery{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;margin-top:50px}.gallery img{width:100%;height:520px;object-fit:cover;border-radius:22px}
+.stat{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}.pill{border:1px solid var(--line);background:var(--glass);padding:10px 14px;border-radius:999px;font-size:12px;color:#d5ddda}
+.final{min-height:85vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:radial-gradient(circle at 50% 50%,#1d3538,#0b1013 55%)}.final p{max-width:760px}
+.signature{margin-top:70px}.name{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:#c4ceca}.sign{font-family:Allura,cursive;font-size:58px;color:var(--lime);transform:rotate(-4deg);margin-top:6px;text-shadow:0 0 20px rgba(184,212,154,.16)}
+footer{padding:28px 7vw;border-top:1px solid var(--line);color:#788683;font-size:11px;display:flex;justify-content:space-between}
+@media(max-width:850px){.split,.details,.procon,.imageStrip,.gallery{grid-template-columns:1fr}.hero{padding-bottom:16vh}.imageStrip img,.gallery img{height:380px}.photo{height:450px}nav span{display:none}}
+</style>
+<style>
+.introCinema{position:fixed;z-index:9999;inset:0;background:#050708;overflow:hidden;transition:opacity .9s ease,visibility .9s}
+.introCinema.done{opacity:0;visibility:hidden;pointer-events:none}
+.cineScene{position:absolute;inset:-7%;background-position:center;background-size:cover;will-change:transform,opacity,filter}
+.cineExterior{animation:cineApproach 5.3s cubic-bezier(.16,.7,.2,1) forwards}
+.cineInterior{opacity:0;transform:scale(1.18);animation:cineEnter 4.2s 4.2s cubic-bezier(.16,.7,.2,1) forwards}
+.cineShade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.52),rgba(0,0,0,.08) 65%),linear-gradient(0deg,rgba(0,0,0,.45),transparent 45%);z-index:2}
+.cineCopy{position:absolute;z-index:3;left:7vw;bottom:11vh;max-width:820px;animation:cineCopy 2.4s .5s both}
+.cineCopy .mini{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#d4e6ca;font-weight:700}
+.cineCopy h1{font-size:clamp(58px,9vw,132px);margin:10px 0;color:white;text-shadow:0 12px 45px rgba(0,0,0,.35)}
+.cineCopy p{font-size:17px;color:#e9eeeb;letter-spacing:.02em}
+.enterWord{position:absolute;z-index:4;inset:0;display:grid;place-items:center;font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(60px,11vw,150px);opacity:0;animation:enterWord 2.2s 4.65s ease both;text-shadow:0 15px 55px #000}
+.cineSkip{position:absolute;z-index:5;right:4vw;bottom:4vh;background:rgba(0,0,0,.28);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:99px;padding:10px 16px;cursor:pointer;backdrop-filter:blur(12px);font:600 11px Manrope;letter-spacing:.12em;text-transform:uppercase}
+.cineProgress{position:absolute;z-index:5;bottom:0;left:0;height:3px;background:#c8e3b3;animation:cineProgress 8.2s linear forwards}
+@keyframes cineApproach{0%{transform:scale(.72);filter:brightness(.65) saturate(.8)}35%{filter:brightness(.9) saturate(1)}100%{transform:scale(1.32) translateY(1.5%);filter:brightness(.7) saturate(1.05)}}
+@keyframes cineEnter{0%{opacity:0;transform:scale(1.2);filter:blur(12px)}22%{opacity:1;filter:blur(0)}100%{opacity:1;transform:scale(1.48) translateY(-2%);filter:brightness(.88)}}
+@keyframes cineCopy{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:none}}
+@keyframes enterWord{0%{opacity:0;transform:scale(.9)}35%{opacity:1}100%{opacity:0;transform:scale(1.12)}}
+@keyframes cineProgress{from{width:0}to{width:100%}}
+body.cineLock{overflow:hidden}
+@media(prefers-reduced-motion:reduce){.introCinema{display:none}}
+</style>
+
+<style>
+.filmIntro{position:fixed;inset:0;z-index:99999;background:#050708;overflow:hidden;color:#fff}
+.filmIntro.hide{animation:filmOut 1.1s ease forwards;pointer-events:none}
+.filmFrame{position:absolute;inset:0;opacity:0;background-size:cover;background-position:center;transform:scale(1.05);filter:brightness(.72) saturate(.92);will-change:transform,opacity,filter}
+.f1{animation:shot1 3.4s 0s both}.f2{animation:shot2 3.2s 2.8s both}.f3{animation:shot3 3.0s 5.5s both}.f4{animation:shot4 2.8s 8s both}.f5{animation:shot5 3s 10.3s both}.f6{animation:shot6 3.2s 12.8s both}.f7{animation:shot7 3.8s 15.4s both}
+.filmShade{position:absolute;inset:0;z-index:8;background:linear-gradient(90deg,rgba(0,0,0,.48),transparent 65%),linear-gradient(0deg,rgba(0,0,0,.45),transparent 55%)}
+.filmTitle{position:absolute;z-index:10;left:6vw;bottom:11vh;animation:titleLife 5.1s both}
+.filmTitle .small{font:700 11px Manrope;letter-spacing:.28em;text-transform:uppercase;color:#d6e7cd}
+.filmTitle h1{font-size:clamp(58px,9vw,132px);margin:9px 0 14px;text-shadow:0 18px 60px #000}
+.filmTitle p{font-size:16px;letter-spacing:.04em;color:#edf2ef}
+.walkLine{position:absolute;z-index:11;left:50%;bottom:5vh;transform:translateX(-50%);font:600 10px Manrope;letter-spacing:.22em;text-transform:uppercase;color:#fff;opacity:.75}
+.walkLine:before{content:"";display:block;width:1px;height:34px;background:#fff;margin:0 auto 10px;animation:linePulse 1.2s infinite}
+.doorFlash{position:absolute;z-index:9;inset:0;background:#fff;opacity:0;animation:doorFlash .8s 10.2s both}
+.filmSkip{position:absolute;right:3.5vw;top:4vh;z-index:20;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.25);color:#fff;border-radius:99px;padding:10px 16px;backdrop-filter:blur(12px);font:600 11px Manrope;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.filmProgress{position:absolute;z-index:20;left:0;bottom:0;height:3px;background:#c9e4b7;animation:progress 19s linear both}
+.enterCaption{position:absolute;z-index:12;left:50%;top:50%;transform:translate(-50%,-50%);font:italic clamp(50px,8vw,115px) "Playfair Display";text-shadow:0 15px 50px #000;opacity:0;animation:welcome 2.4s 12.9s both}
+@keyframes shot1{0%{opacity:1;transform:scale(.92)}78%{opacity:1;transform:scale(1.08) translateY(1%)}100%{opacity:0;transform:scale(1.11)}}
+@keyframes shot2{0%{opacity:0;transform:scale(.96) translateX(2%)}12%{opacity:1}82%{opacity:1;transform:scale(1.16) translateX(-2%)}100%{opacity:0}}
+@keyframes shot3{0%{opacity:0;transform:scale(1.02)}12%{opacity:1}82%{opacity:1;transform:scale(1.22) translateY(2%)}100%{opacity:0}}
+@keyframes shot4{0%{opacity:0;transform:scale(1.04)}12%{opacity:1}82%{opacity:1;transform:scale(1.20) translateX(-2%)}100%{opacity:0}}
+@keyframes shot5{0%{opacity:0;transform:scale(1.12);filter:brightness(.5) blur(4px)}18%{opacity:1;filter:brightness(.82) blur(0)}82%{opacity:1;transform:scale(1.28) translateY(-1%)}100%{opacity:0}}
+@keyframes shot6{0%{opacity:0;transform:scale(1.08) translateX(2%)}15%{opacity:1}82%{opacity:1;transform:scale(1.20) translateX(-2%)}100%{opacity:0}}
+@keyframes shot7{0%{opacity:0;transform:scale(1.04)}15%{opacity:1}100%{opacity:1;transform:scale(1.14)}}
+@keyframes titleLife{0%{opacity:0;transform:translateY(35px)}15%,72%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-15px)}}
+@keyframes welcome{0%,12%{opacity:0;transform:translate(-50%,-50%) scale(.88)}35%,72%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.08)}}
+@keyframes doorFlash{0%,45%,100%{opacity:0}60%{opacity:.35}}
+@keyframes linePulse{0%,100%{opacity:.25;transform:scaleY(.7)}50%{opacity:1;transform:scaleY(1)}}
+@keyframes progress{from{width:0}to{width:100%}}
+@keyframes filmOut{to{opacity:0;visibility:hidden}}
+body.filmLocked{overflow:hidden}
+</style>
+
+<style>
+.realIntro{position:fixed;inset:0;z-index:100000;background:#050708;overflow:hidden;color:white}
+.realIntro.out{animation:introOut 1.15s cubic-bezier(.2,.8,.2,1) forwards;pointer-events:none}
+.realIntro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#050708}
+.realIntro:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,7,9,.55),rgba(3,7,9,.04) 65%),linear-gradient(0deg,rgba(3,7,9,.42),transparent 48%);pointer-events:none}
+.realTitle{position:absolute;z-index:3;left:6vw;bottom:10vh;max-width:900px;animation:realTitle 4.8s ease both}
+.realTitle .micro{font:700 11px Manrope,Arial;letter-spacing:.28em;text-transform:uppercase;color:#d7e9ce}
+.realTitle h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(58px,9vw,132px);line-height:.9;margin:12px 0;color:white;text-shadow:0 18px 60px rgba(0,0,0,.55)}
+.realTitle p{font:500 16px Manrope,Arial;letter-spacing:.03em;color:#eef3ef}
+.realSkip{position:absolute;z-index:4;right:3.5vw;top:4vh;border:1px solid rgba(255,255,255,.48);background:rgba(0,0,0,.24);color:white;border-radius:999px;padding:10px 16px;backdrop-filter:blur(12px);font:700 10px Manrope,Arial;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.realProgress{position:absolute;z-index:4;left:0;bottom:0;height:3px;background:#c8e3b3;width:0}
+.realIntro.playing .realProgress{animation:realProgress 16.73s linear forwards}
+@keyframes realTitle{0%{opacity:0;transform:translateY(38px)}16%,68%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-12px)}}
+@keyframes realProgress{from{width:0}to{width:100%}}
+@keyframes introOut{to{opacity:0;visibility:hidden;transform:scale(1.015)}}
+body.realLocked{overflow:hidden}
+</style>
+
+<style>
+/* Cinematic site-wide motion */
+section{position:relative;overflow:hidden}
+section:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(130,184,201,.11),transparent 68%);right:-180px;top:-180px;pointer-events:none;animation:orb 9s ease-in-out infinite alternate}
+.hero{overflow:hidden}.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.10) 47%,transparent 62%);transform:translateX(-120%);animation:heroSweep 5.5s 1s ease forwards}
+.heroText{animation:heroReveal 1.6s cubic-bezier(.16,.8,.2,1) both}
+.hero{background-attachment:fixed}
+.motion{opacity:0;transform:translateY(55px) scale(.975);filter:blur(7px);transition:opacity 1s ease,transform 1.15s cubic-bezier(.16,.8,.2,1),filter 1s ease}
+.motion.visible{opacity:1;transform:none;filter:none}
+.motion-left{opacity:0;transform:translateX(-70px);transition:1.2s cubic-bezier(.16,.8,.2,1)}
+.motion-left.visible{opacity:1;transform:none}
+.motion-right{opacity:0;transform:translateX(70px);transition:1.2s cubic-bezier(.16,.8,.2,1)}
+.motion-right.visible{opacity:1;transform:none}
+.photo,.imageStrip img,.gallery img{transition:transform 1.1s cubic-bezier(.16,.8,.2,1),filter .8s ease;will-change:transform}
+.photo:hover,.imageStrip img:hover,.gallery img:hover{transform:scale(1.035);filter:brightness(1.08) saturate(1.08)}
+.imageStrip,.gallery{overflow:hidden}
+.card,details{position:relative;isolation:isolate}
+.card:before,details:before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(120deg,transparent 25%,rgba(255,255,255,.10),transparent 68%);transform:translateX(-120%);transition:transform .8s ease;z-index:-1}
+.card:hover:before,details:hover:before{transform:translateX(120%)}
+details[open]{transform:translateY(-5px) scale(1.01)}
+details[open] .inside{animation:panelCinema .65s cubic-bezier(.16,.8,.2,1)}
+.detailImg{transform-origin:center 65%}
+details[open] .detailImg{animation:imageEnter .9s cubic-bezier(.16,.8,.2,1) both}
+.case h2,.final h2{background:linear-gradient(90deg,#fff,#cfe7c2,#fff);background-size:200% auto;color:transparent;background-clip:text;-webkit-background-clip:text;animation:textShimmer 6s linear infinite}
+.signature{opacity:0;transform:translateY(25px) rotate(-2deg);transition:1.3s .25s ease}.signature.visible{opacity:1;transform:rotate(-2deg)}
+.scrollDot{position:fixed;right:24px;top:50%;z-index:30;width:5px;height:52px;border-radius:10px;background:rgba(255,255,255,.12);overflow:hidden}.scrollDot i{display:block;width:100%;height:0;background:#b8d49a;border-radius:10px}
+@keyframes heroReveal{from{opacity:0;transform:translateY(55px);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+@keyframes heroSweep{to{transform:translateX(130%)}}
+@keyframes orb{to{transform:translate(-90px,100px) scale(1.25)}}
+@keyframes panelCinema{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:none}}
+@keyframes imageEnter{from{opacity:0;transform:scale(1.12);filter:blur(10px)}to{opacity:1;transform:scale(1);filter:none}}
+@keyframes textShimmer{to{background-position:200% center}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.motion,.motion-left,.motion-right,.signature{opacity:1;transform:none;filter:none}.hero{background-attachment:scroll}}
+</style>
+
+<style>
+.heroText .eyebrow,.heroText h1,.heroText .lead{opacity:0}
+.heroText .eyebrow{animation:heroPiece .75s .15s cubic-bezier(.16,.8,.2,1) forwards}
+.heroText h1{animation:heroPiece 1s .55s cubic-bezier(.16,.8,.2,1) forwards}
+.heroText .lead{animation:heroPiece .9s 1.15s cubic-bezier(.16,.8,.2,1) forwards}
+@keyframes heroPiece{from{opacity:0;transform:translateY(24px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+
+/* automatic characteristic-card presentation */
+#car details.autoFocus{border-color:rgba(184,212,154,.75);box-shadow:0 24px 75px rgba(0,0,0,.35),0 0 42px rgba(184,212,154,.10);transform:translateY(-6px) scale(1.012)}
+#car details.autoFocus summary{color:#fff}
+#car details.autoFocus .detailImg{animation:imageEnter .85s cubic-bezier(.16,.8,.2,1) both}
+
+/* hand-written SVG signature */
+.signatureStage{margin-top:65px;display:flex;flex-direction:column;align-items:center}
+.signatureStage .name{opacity:0;transform:translateY(15px);transition:.7s ease}
+.signatureStage svg{width:min(440px,78vw);height:120px;overflow:visible}
+.signatureStage path{fill:none;stroke:#b8d49a;stroke-width:3.1;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 8px rgba(184,212,154,.18));stroke-dasharray:1800;stroke-dashoffset:1800}
+.signatureStage.signNow .name{opacity:1;transform:none}
+.signatureStage.signNow path{animation:writeSignature 3.2s .45s cubic-bezier(.55,.05,.25,1) forwards}
+.signatureStage.signNow .sigUnderline{animation-delay:2.6s;animation-duration:1.15s}
+@keyframes writeSignature{to{stroke-dashoffset:0}}
+</style>
+
+<style>
+.siteNav{gap:24px}.siteNav .brand{margin:0;font-weight:800;letter-spacing:.16em;color:#fff}.navLinks{display:flex;align-items:center;flex:1;justify-content:center}.siteSearch{position:relative;display:flex;width:min(290px,25vw);border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.055);overflow:visible;transition:.35s}
+.siteSearch:focus-within{border-color:rgba(184,212,154,.7);box-shadow:0 0 0 4px rgba(184,212,154,.07)}
+.siteSearch input{width:100%;border:0;outline:0;background:transparent;color:#fff;padding:10px 12px 10px 16px;font:500 12px Manrope}.siteSearch input::placeholder{color:#899693}.siteSearch button{border:0;background:transparent;color:#cfe3c4;padding:0 14px;font-size:20px;cursor:pointer}
+.searchHints{display:none;position:absolute;top:48px;right:0;width:310px;padding:8px;background:#121a1e;border:1px solid rgba(255,255,255,.13);border-radius:15px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.searchHints.show{display:block}.searchHints button{display:block;width:100%;text-align:left;padding:11px 12px;border-radius:10px;color:#dce4e0;font:500 12px Manrope}.searchHints button:hover{background:rgba(255,255,255,.07)}
+/* warmer, slower cards */
+details{transition:transform .9s cubic-bezier(.16,.8,.2,1),border-color .9s ease,box-shadow .9s ease,background .9s ease}
+details[open]{background:linear-gradient(145deg,rgba(130,184,201,.11),rgba(184,212,154,.075));box-shadow:0 26px 80px rgba(0,0,0,.28);transform:translateY(-3px) scale(1.006)}
+details .inside{transition:all .9s ease}
+details[open] .inside{animation:softPanel 1.15s cubic-bezier(.16,.8,.2,1)}
+details[open] .detailImg{animation:softImage 1.35s cubic-bezier(.16,.8,.2,1) both}
+@keyframes softPanel{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes softImage{from{opacity:0;transform:scale(1.045);filter:blur(5px) brightness(.78)}to{opacity:1;transform:scale(1);filter:none}}
+@media(max-width:980px){.navLinks{display:none}.siteSearch{width:min(330px,55vw)}}
+</style>
+
+<style>
+/* Unified interaction for every expandable card */
+details{transition:transform .75s cubic-bezier(.16,.8,.2,1),background .75s ease,border-color .75s ease,box-shadow .75s ease}
+details[open]{transform:translateY(-3px);border-color:rgba(184,212,154,.52);background:linear-gradient(145deg,rgba(130,184,201,.10),rgba(184,212,154,.065));box-shadow:0 22px 65px rgba(0,0,0,.25)}
+details .inside{transform-origin:top;overflow:hidden}
+details[open] .inside{animation:calmOpen .9s cubic-bezier(.16,.8,.2,1) both}
+details[open] .detailImg{animation:calmPhoto 1.05s .08s cubic-bezier(.16,.8,.2,1) both}
+@keyframes calmOpen{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+@keyframes calmPhoto{from{opacity:0;transform:scale(1.035);filter:blur(4px)}to{opacity:1;transform:scale(1);filter:none}}
+
+/* real handwritten name */
+.signatureStage .typedSig{display:none}
+.signatureStage svg{height:135px}
+.signatureStage .sigNamePath{stroke-dasharray:2400;stroke-dashoffset:2400}
+.signatureStage.signNow .sigNamePath{animation:writeName 4.4s .35s cubic-bezier(.45,.05,.25,1) forwards}
+.signatureStage.signNow .sigUnderline{animation:writeName 1.15s 4.15s ease forwards}
+@keyframes writeName{to{stroke-dashoffset:0}}
+</style>
+
+<style>
+/* Content visibility safety: text and slides must always be readable */
+.motion,.motion-left,.motion-right,
+section.motion,section.motion-left,section.motion-right{
+  opacity:1 !important;
+  transform:none !important;
+  filter:none !important;
+}
+.signatureStage{opacity:1 !important;transform:none !important;}
+/* keep a subtle entrance only when JS explicitly adds this class */
+.jsReveal{opacity:0;transform:translateY(28px);filter:blur(4px);transition:opacity .85s ease,transform .9s cubic-bezier(.16,.8,.2,1),filter .85s ease}
+.jsReveal.visible{opacity:1;transform:none;filter:none}
+</style>
+
+<style>
+.signatureStage{margin-top:58px;text-align:center;opacity:1!important;transform:none!important}
+.signatureStage .name{font:600 11px Manrope,Arial;letter-spacing:.2em;text-transform:uppercase;color:#aeb8b6;opacity:0;transition:opacity .7s ease}
+.liveSignature{display:block;width:min(720px,92vw);height:auto;margin:0 auto;overflow:visible}
+.signatureText{
+  font-family:"Allura","Brush Script MT","Segoe Script",cursive;
+  font-size:92px;
+  fill:transparent;
+  stroke:#b8d49a;
+  stroke-width:1.65px;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  paint-order:stroke;
+  stroke-dasharray:2600;
+  stroke-dashoffset:2600;
+  filter:drop-shadow(0 0 7px rgba(184,212,154,.18));
+}
+.signatureUnderline{
+  fill:none;stroke:#b8d49a;stroke-width:3;stroke-linecap:round;
+  stroke-dasharray:700;stroke-dashoffset:700;
+}
+.signatureStage.signNow .name{opacity:1}
+.signatureStage.signNow .signatureText{animation:signName 4.6s .45s linear forwards}
+.signatureStage.signNow .signatureUnderline{animation:signLine 1.15s 4.65s ease forwards}
+@keyframes signName{
+  0%{stroke-dashoffset:2600;fill:transparent}
+  82%{fill:transparent}
+  100%{stroke-dashoffset:0;fill:#b8d49a}
+}
+@keyframes signLine{to{stroke-dashoffset:0}}
+</style>
+<style>.drawingGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:42px}.drawingGrid figure{margin:0;background:#f1f3ef;border-radius:20px;overflow:hidden;color:#202521}.drawingGrid img{width:100%;height:360px;object-fit:contain;padding:20px;display:block;transition:transform .6s}.drawingGrid img:hover{transform:scale(1.035)}.drawingGrid figcaption{padding:16px 22px;font-weight:600;font-size:14px}.sourceNote{color:#b9c5c0;font-size:13px;margin-top:24px}.sourceNote a{color:#cfe3b4}@media(max-width:750px){.drawingGrid{grid-template-columns:1fr}.drawingGrid img{height:280px}}</style><meta name="description" content="La casa a schiera: caratteristiche, vantaggi e svantaggi, storia e analisi della Römerstadt di Ernst May. Presentazione di Emanuele Visone.">
+<meta name="robots" content="index, follow">
+</head><body><div class="scrollDot"><i id="scrollProgress"></i></div><nav class="siteNav">
+<a class="brand" href="#top">EV / ARCH</a>
+<div class="navLinks">
+<a href="#top">Home</a><a href="#idea">Cos'è</a><a href="#car">Caratteristiche</a><a href="#pro">Pro e contro</a><a href="#architetto">Architetto</a><a href="#caso">Caso studio</a><a href="#disegni">Piante e sezione</a>
+</div>
+<div class="siteSearch" id="siteSearch"><input id="searchInput" type="search" placeholder="Cerca nel sito…" aria-label="Cerca nel sito"><button type="button" id="searchGo">⌕</button><div class="searchHints" id="searchHints"></div></div>
+</nav>
+<header class="hero" id="top"><div class="heroText"><div class="eyebrow">Architettura residenziale · Emanuele Visone</div><h1>La casa<br>a schiera</h1><p class="lead">Il comfort di una casa indipendente, la forza di un progetto condiviso. Un modo di abitare compatto, contemporaneo e vicino al verde.</p></div></header>
+
+<section id="idea" class="motion"><div class="split"><div><div class="eyebrow">01 — Che cos'è</div><h2>Una casa privata.<br>Dentro un insieme.</h2></div><div><p class="introcopy">La <b>casa a schiera</b> è un'abitazione unifamiliare affiancata ad altre unità simili. Ogni famiglia dispone del proprio ingresso e dei propri ambienti, mentre uno o due muri laterali vengono condivisi con le abitazioni vicine.</p><p class="introcopy">Questa soluzione permette di sfruttare meglio il terreno senza rinunciare alla sensazione di vivere in una vera casa. Spesso sono presenti un giardino, un patio o un piccolo cortile privato. La disposizione affiancata crea inoltre un fronte urbano ordinato e riconoscibile, mantenendo però ben distinta l’identità di ogni abitazione.</p></div></div>
+<div class="imageStrip"><img src="https://www.osiedla-sogo.pl/assets/images/smolec/wizSmolec1.jpg"><img src="https://www.taylorwimpey.co.uk/-/twdxmedia/images/business-units/exeter/sales/sherford/image-gallery/new/tw-ex-urban-quarter-at-sherford-3e.jpg?hash=7EB5278DDAD941EF992CB9F538D42D8D&mw=1440"></div></section>
+
+<section id="car" class="motion"><div class="eyebrow">02 — Elementi distintivi</div><h2>Il carattere della<br>casa a schiera.</h2><p class="lead">Autonomia, continuità e rapporto con lo spazio esterno definiscono questa tipologia. Ogni elemento contribuisce a creare un equilibrio tra la privacy della casa individuale e l’ordine di un progetto unitario.</p>
+
+<div class="details characteristicsGrid">
+<details>
+<summary>Ingresso indipendente</summary>
+<div class="inside">
+<img class="detailImg" src="https://www.taylorwimpey.co.uk/-/twdxmedia/images/business-units/exeter/sales/sherford/image-gallery/new/tw-ex-urban-quarter-at-sherford-3e.jpg?hash=7EB5278DDAD941EF992CB9F538D42D8D&mw=1440" alt="Ingresso di case a schiera moderne">
+<b>Autonomia fin dall’accesso.</b> Ogni abitazione possiede un ingresso proprio, direttamente collegato alla strada, al vialetto o allo spazio antistante. Non è necessario attraversare scale o corridoi condominiali. L’accesso personale rende immediatamente riconoscibile la singola unità all’interno della schiera. <b>Vantaggio:</b> maggiore privacy, più libertà negli accessi e una sensazione molto più vicina a quella di una casa indipendente.
+</div></details>
+
+<details>
+<summary>Muri laterali condivisi</summary>
+<div class="inside">
+<img class="detailImg" src="https://www.osiedla-sogo.pl/assets/images/smolec/wizSmolec1.jpg" alt="Case a schiera affiancate">
+<b>La continuità costruisce la schiera.</b> Le abitazioni sono accostate lateralmente e condividono uno o due muri di confine. Questo crea un fronte urbano ordinato e permette di utilizzare meglio il terreno. La parete condivisa è uno degli elementi fondamentali che distingue questa tipologia dalla villa isolata. <b>Vantaggio:</b> minori superfici esterne esposte, migliore utilizzo del lotto e potenziale riduzione delle dispersioni termiche.
+</div></details>
+
+<details>
+<summary>Sviluppo su più livelli</summary>
+<div class="inside">
+<img class="detailImg" src="https://pauljohnston.com/wp-content/uploads/004-5-1024x683.jpg" alt="Case a schiera contemporanee su più livelli">
+<b>Più spazio in verticale.</b> La zona giorno si trova spesso al piano terra, mentre camere e bagni occupano i livelli superiori. In questo modo si ottiene una buona superficie abitabile senza aumentare troppo l’occupazione del terreno. La divisione verticale permette inoltre di separare con chiarezza la zona giorno, più aperta e conviviale, dalla zona notte, più riservata.
+</div></details>
+
+<details>
+<summary>Giardino o spazio privato</summary>
+<div class="inside">
+<img class="detailImg" src="https://www.dworakowskinieruchomosci.pl/storage/app/uploads/public/68b/efa/d95/68befad959ceb672835143.jpg" alt="Casa a schiera con spazio esterno">
+<b>Una stanza all’aperto.</b> Giardino, patio o cortile prolungano gli ambienti domestici verso l’esterno. Possono essere utilizzati per rilassarsi, mangiare all’aperto o avere un contatto diretto con il verde. Lo spazio esterno diventa quindi una vera estensione dell’abitazione e contribuisce in modo importante alla qualità della vita quotidiana.
+</div></details>
+
+<details>
+<summary>Forma stretta e profonda</summary>
+<div class="inside">
+<img class="detailImg" src="https://www.fr.de/assets/images/27/386/27386269-die-haeuser-in-der-strasse-im-burgfeld-als-teil-der-ernst-may-siedlung-roemerstadt-wurden-vor-kurzem-saniert-2vqVN7alr67a.jpg" alt="Schiera della Römerstadt">
+<b>Una geometria legata al lotto.</b> Le unità centrali hanno i lati occupati dalle case confinanti e tendono quindi a svilupparsi maggiormente in profondità. Le aperture principali sono concentrate sul fronte e sul retro. Per questo motivo la progettazione deve studiare con attenzione l’ingresso della luce naturale e la disposizione degli ambienti interni.
+</div></details>
+
+<details>
+<summary>Ripetizione modulare</summary>
+<div class="inside">
+<img class="detailImg" src="https://www.museumangewandtekunst.de/images/max/06_siedlung_roemerstadt_im_burgfeld_frankfurt_1.png" alt="Ripetizione delle case nella Römerstadt">
+<b>Un ritmo architettonico riconoscibile.</b> La ripetizione delle unità crea continuità tra ingressi, finestre e volumi. Materiali e dettagli possono comunque differenziare le singole abitazioni, evitando un risultato monotono. La modularità rende inoltre più razionale la progettazione e contribuisce a dare al quartiere un’immagine architettonica unitaria.
+</div></details>
+</div>
+</section>
+
+<section id="pro" class="motion"><div class="split"><div><div class="eyebrow">03 — Vivere in una casa a schiera</div><h2>Perché sceglierla?</h2><p class="introcopy">È una soluzione intermedia tra appartamento e villa: offre autonomia, ma utilizza lo spazio urbano in maniera più compatta. Anche qui puoi aprire le schede per vedere i dettagli.</p></div><img class="photo" src="https://www.dworakowskinieruchomosci.pl/storage/app/uploads/public/68b/efa/d95/68befad959ceb672835143.jpg"></div>
+<div class="procon">
+<div><div class="eyebrow">Vantaggi</div><details><summary>Più indipendenza</summary><div class="inside">Ingresso autonomo e assenza di vicini sopra o sotto rendono l'abitazione più simile a una casa indipendente. Ogni famiglia gestisce i propri accessi con maggiore libertà e dispone di spazi chiaramente separati da quelli delle altre unità. Questo aumenta privacy e autonomia rispetto a un condominio tradizionale.</div></details><details><summary>Spazio esterno</summary><div class="inside">Giardino o patio consentono di vivere anche all'aperto e aumentano la qualità degli spazi domestici. Possono diventare una vera estensione del soggiorno, utilizzabile per mangiare, rilassarsi o trascorrere tempo all'aperto. Lo spazio verde privato è uno degli aspetti più apprezzati di questa tipologia.</div></details><details><summary>Uso efficiente del terreno</summary><div class="inside">La disposizione affiancata permette di costruire più abitazioni senza ricorrere necessariamente a edifici alti. Rispetto alle ville isolate, le case a schiera richiedono generalmente meno terreno per ogni unità e consentono quartieri più compatti. I muri condivisi possono inoltre limitare parte delle dispersioni termiche laterali.</div></details></div>
+<div><div class="eyebrow" style="color:#e29b86">Svantaggi</div><details><summary>Meno privacy di una villa</summary><div class="inside">La vicinanza delle altre abitazioni è maggiore rispetto a una casa completamente isolata. Anche con ingresso e giardino propri, la presenza immediata dei vicini sui lati può ridurre la sensazione di isolamento e libertà tipica di una villa indipendente.</div></details><details><summary>Possibili rumori</summary><div class="inside">Un isolamento acustico non adeguato può rendere percepibili alcuni rumori provenienti dalle unità confinanti, perché uno o due muri sono condivisi. La qualità delle pareti divisorie e dei materiali isolanti è quindi molto importante per garantire un buon comfort abitativo.</div></details><details><summary>Luce soprattutto fronte-retro</summary><div class="inside">Nelle unità centrali non ci sono facciate laterali libere, quindi finestre e luce naturale si concentrano principalmente davanti e dietro. Gli ambienti più profondi possono ricevere meno luce rispetto a una casa isolata. La progettazione deve quindi curare attentamente finestre, distribuzione interna e rapporto con il giardino.</div></details></div>
+</div></section>
+
+<section id="architetto" class="motion architectSection"><div class="split"><div><div class="eyebrow">04 — L’architetto</div><h2>Ernst May</h2><p class="lead">1886–1970 · Architetto e urbanista tedesco</p></div><div><p class="introcopy"><b>Ernst May</b> è stato uno dei protagonisti dell’architettura moderna. A Francoforte guidò il programma <i>Neues Frankfurt</i>, che aveva l’obiettivo di creare case semplici, luminose e funzionali.</p><p class="introcopy">Con la <b>Römerstadt</b> mostrò come le case a schiera potessero offrire spazi comodi e giardini privati, sfruttando bene il terreno.</p></div></div></section>
+<section id="caso" class="case motion"><div class="split"><div><div class="eyebrow">04 — Caso studio</div><h2>Siedlung<br>Römerstadt</h2><div class="stat"><span class="pill">Francoforte sul Meno</span><span class="pill">1927–1929</span><span class="pill">Ernst May</span><span class="pill">Neues Frankfurt</span></div></div><div><p class="introcopy">La Römerstadt è uno degli esempi più importanti dell'edilizia residenziale moderna di Francoforte. Nasce nell'ambito del programma <i>Neues Frankfurt</i>, diretto da <b>Ernst May</b>, con l'obiettivo di creare abitazioni funzionali, moderne e accessibili.</p><p class="introcopy">Le case a schiera presentano forme semplici, tetti piani, una disposizione ordinata e un forte rapporto con il verde. La ripetizione non elimina l'identità della singola casa: crea invece un quartiere unitario e riconoscibile.</p></div></div>
+<div class="gallery"><img src="https://www.fr.de/assets/images/27/386/27386269-die-haeuser-in-der-strasse-im-burgfeld-als-teil-der-ernst-may-siedlung-roemerstadt-wurden-vor-kurzem-saniert-2vqVN7alr67a.jpg"><img src="https://www.museumangewandtekunst.de/images/max/06_siedlung_roemerstadt_im_burgfeld_frankfurt_1.png"></div></section>
+
+<section class="motion"><div class="split"><img class="photo" src="https://img.destination.one/remote/.webp?height=1920&mode=crop&quality=90&scale=both&url=https%3A%2F%2Fdam.destination.one%2F2382398%2Fe3d0575a89fa39b53389c6057d329b05b4de4f4a7dc7853b541052ba8ce4f66d%2Fernst-may-haus.jpg&width=2560"><div><div class="eyebrow">05 — Ernst-May-Haus</div><h2>Una casa che racconta un'idea.</h2><p class="introcopy"><b>Im Burgfeld 136</b> è una casa a schiera della Römerstadt oggi restaurata come casa-museo. Permette di osservare concretamente il modo di abitare immaginato dal Neues Frankfurt.</p><p class="introcopy">All'interno è presente anche la celebre <b>Frankfurter Küche</b>, legata al lavoro di Margarete Schütte-Lihotzky: un esempio fondamentale della ricerca di funzionalità e razionalità negli spazi domestici.</p></div></div></section>
+
+
+<section id="scelta" class="case"><div class="eyebrow">06 — La scelta del progetto</div><h2>Perché proprio<br>la Römerstadt?</h2><p class="introcopy" style="max-width:930px">Ho scelto la Römerstadt perché è un esempio concreto di come la casa a schiera possa rispondere a un problema reale: offrire abitazioni funzionali e accessibili senza rinunciare alla luce, all'autonomia e al verde. Il progetto di Ernst May non si limita alla singola abitazione, ma studia l'intero quartiere, collegando case, strade e giardini.</p><div class="details">
+<details><summary>Un progetto innovativo per l'epoca</summary><div class="inside">Alla fine degli anni Venti, la Römerstadt proponeva abitazioni progettate secondo criteri moderni: ambienti ben organizzati, impianti avanzati e attenzione alla vita quotidiana. Non era solo una nuova forma architettonica, ma un nuovo modo di pensare l'abitare.</div></details>
+<details><summary>Un equilibrio tra casa e città</summary><div class="inside">La ripetizione delle case a schiera consente di formare strade ordinate e quartieri compatti. Allo stesso tempo, ogni famiglia mantiene un ingresso autonomo e uno spazio esterno, elementi tipici della casa individuale.</div></details>
+<details><summary>Una casa visitabile ancora oggi</summary><div class="inside">La Ernst-May-Haus, al numero 136 di Im Burgfeld, è stata restaurata e permette di comprendere concretamente le scelte progettuali originarie. È un caso studio particolarmente utile perché possiamo confrontare fotografie, ambienti reali e documentazione architettonica.</div></details>
+<details><summary>Un'idea ancora attuale</summary><div class="inside">Anche oggi molte città cercano soluzioni che limitino il consumo di suolo senza rinunciare alla qualità dell'abitare. Le case a schiera della Römerstadt aiutano a riflettere su questo equilibrio tra densità, privacy e spazi verdi.</div></details>
+</div></section>
+<section id="dati"><div class="eyebrow">07 — La casa in numeri</div><h2>Piccola nelle dimensioni.<br>Grande nell'idea.</h2><div class="details">
+<details><summary>88 m² di superficie utile</summary><div class="inside">La casa campione comprende cinque stanze, distribuite su due piani abitabili, oltre a un piano interrato. La distribuzione è pensata per sfruttare con attenzione ogni ambiente.</div></details>
+<details><summary>50 m² di superficie costruita</summary><div class="inside">La superficie occupata dall'edificio è relativamente contenuta: lo sviluppo su più livelli permette di conservare terreno per gli spazi esterni.</div></details>
+<details><summary>130 m² di giardino</summary><div class="inside">Il giardino privato è parte integrante del progetto: collega la vita domestica con l'aria aperta e rafforza l'autonomia della singola casa.</div></details>
+<details><summary>Circa 2,70 m di altezza interna</summary><div class="inside">L'altezza dei locali è di circa 2,70 metri. L'organizzazione razionale degli spazi, le aperture e la relazione con l'esterno contribuiscono al comfort dell'abitazione.</div></details>
+</div></section>
+<section id="disegni" class="case"><div class="eyebrow">08 — Documentazione originale</div><h2>Piante e sezione<br>della Ernst-May-Haus.</h2><p class="introcopy" style="max-width:900px">Questi disegni riguardano la casa campione Im Burgfeld 136. Le piante permettono di leggere la disposizione degli ambienti; la sezione mostra i rapporti verticali fra i piani, le scale e la copertura. Seleziona un disegno per ingrandirlo.</p>
+<div class="drawingGrid">
+<figure><a target="_blank" rel="noopener" href="https://ernst-may-gesellschaft.de/fileadmin/Redakteure/Seiten_Anlagen/emh/Erdgeschoss.jpg"><img loading="lazy" src="https://ernst-may-gesellschaft.de/fileadmin/Redakteure/Seiten_Anlagen/emh/Erdgeschoss.jpg" alt="Pianta originale del piano terra della Ernst-May-Haus"></a><figcaption>Pianta del piano terra · zona giorno e cucina</figcaption></figure>
+<figure><a target="_blank" rel="noopener" href="https://ernst-may-gesellschaft.de/fileadmin/Redakteure/Seiten_Anlagen/emh/Obergeschoss.jpg"><img loading="lazy" src="https://ernst-may-gesellschaft.de/fileadmin/Redakteure/Seiten_Anlagen/emh/Obergeschoss.jpg" alt="Pianta originale del primo piano della Ernst-May-Haus"></a><figcaption>Pianta del primo piano · camere e bagno</figcaption></figure>
+<figure><a target="_blank" rel="noopener" href="https://ernst-may-gesellschaft.de/fileadmin/Redakteure/Seiten_Anlagen/emh/Keller.jpg"><img loading="lazy" src="https://ernst-may-gesellschaft.de/fileadmin/Redakteure/Seiten_Anlagen/emh/Keller.jpg" alt="Pianta originale del piano interrato della Ernst-May-Haus"></a><figcaption>Pianta del piano interrato · servizi</figcaption></figure>
+<figure><a target="_blank" rel="noopener" href="https://ernst-may-gesellschaft.de/fileadmin/Redakteure/Seiten_Anlagen/emh/Schnitt.jpg"><img loading="lazy" src="https://ernst-may-gesellschaft.de/fileadmin/Redakteure/Seiten_Anlagen/emh/Schnitt.jpg" alt="Sezione architettonica originale della Ernst-May-Haus"></a><figcaption>Sezione · collegamento verticale dei livelli</figcaption></figure>
+</div><p class="sourceNote">Disegni: Ernst-May-Gesellschaft. Se un'immagine non viene caricata, consulta la <a target="_blank" rel="noopener" href="https://ernst-may-gesellschaft.de/mayhaus/musterhaus">pagina ufficiale con le piante e la sezione</a>.</p></section>
+<section id="innovazioni"><div class="eyebrow">09 — Oltre l'architettura</div><h2>Le innovazioni<br>del Neues Frankfurt.</h2><div class="details">
+<details><summary>La Cucina di Francoforte</summary><div class="inside">Progettata da Margarete Schütte-Lihotzky, è un esempio di cucina compatta e funzionale: ogni elemento è studiato per ridurre spostamenti inutili e semplificare il lavoro domestico. Nella Ernst-May-Haus la cucina misura circa 8 m².</div></details>
+<details><summary>Impianti e comfort</summary><div class="inside">La Römerstadt fu un quartiere all'avanguardia per l'elettrificazione. La casa disponeva di soluzioni tecniche innovative per l'epoca, tra cui riscaldamento centralizzato a carbone e impianti elettrici per illuminazione, cucina e acqua calda.</div></details>
+<details><summary>Colori e materiali</summary><div class="inside">La semplicità esterna non significava ambienti privi di colore: la documentazione del restauro racconta finestre blu, vano scala giallo, porte e superfici con tonalità differenti. La funzionalità conviveva con un'identità visiva precisa.</div></details>
+<details><summary>Un limite del progetto</summary><div class="inside">Le case erano pensate per offrire abitazioni economicamente accessibili, ma i costi di costruzione aumentarono. I canoni effettivi risultarono troppo elevati per molte famiglie operaie: un aspetto importante per valutare il progetto anche dal punto di vista sociale.</div></details>
+</div></section>
+<section class="final motion"><div class="eyebrow">Conclusione</div><h2>Indipendente,<br>ma parte di un insieme.</h2><p class="lead">La casa a schiera dimostra che qualità dell'abitare e uso razionale dello spazio possono convivere. È una tipologia capace di offrire privacy, spazio esterno e identità individuale all'interno di un progetto urbano compatto. Proprio questo equilibrio tra autonomia e appartenenza a un insieme spiega perché continui a essere una soluzione residenziale attuale e molto utilizzata.</p>
+<div class="signatureStage" id="signatureStage">
+  <div class="name">Progetto di</div>
+  <svg class="liveSignature" viewBox="0 0 900 220" role="img" aria-label="Firma Emanuele Visone">
+    <text class="signatureText" x="450" y="135" text-anchor="middle">Emanuele Visone</text>
+    <path class="signatureUnderline" d="M190 168 C355 190 570 188 735 164"/>
+  </svg>
+</div></section>
+<footer><span>LA CASA A SCHIERA</span><span>Emanuele Visone · Presentazione digitale</span></footer>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const input=document.getElementById('searchInput');
+ const goBtn=document.getElementById('searchGo');
+ const hints=document.getElementById('searchHints');
+ const routes=[
+  ['pro','Pro e contro',['pro e contro','pro contro','vantaggi','svantaggi','vantaggi e svantaggi']],
+  ['car','Caratteristiche',['caratteristiche','ingresso indipendente','muri condivisi','giardino','livelli','ripetizione modulare']],
+  ['architetto','Ernst May — Architetto',['architetto','ernst may','biografia']],
+  ['caso','Caso studio — Römerstadt',['caso studio','romerstadt','ernst may','francoforte']],
+  ['idea',"Cos'è una casa a schiera",['cos è','cosa è','definizione','casa a schiera']],
+  ['signatureStage','Conclusione — Emanuele Visone',['firma','conclusione','emanuele visone']],
+  ['scelta','Perché questo progetto',['perche questo progetto','scelta progetto','perche romerstadt']],
+  ['dati','Dati della casa',['dati','dimensioni','superficie','metri quadri']],
+  ['disegni','Piante e sezione',['pianta','piante','sezione','disegni tecnici','piano terra','primo piano']],
+  ['innovazioni','Innovazioni e materiali',['innovazioni','cucina di francoforte','materiali','impianti','colori']],
+  ['top','Home',['home','inizio']]
+ ];
+ const norm=s=>(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’']/g,' ').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
+ function pick(q){
+   q=norm(q);
+   for(const r of routes) for(const t of r[2]) if(norm(t)===q) return r;
+   for(const r of routes) for(const t of r[2]) if(norm(t).includes(q)||q.includes(norm(t))) return r;
+   return null;
+ }
+ function jump(r){
+   if(!r)return;
+   const el=document.getElementById(r[0]);
+   if(!el)return;
+   hints.classList.remove('show');
+   input.blur();
+   // update hash and then force exact scrolling after browser anchor resolution
+   history.pushState(null,'','#'+r[0]);
+   requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      const nav=document.querySelector('.siteNav');
+      const y=el.getBoundingClientRect().top+window.scrollY-(nav?nav.offsetHeight:0)-12;
+      window.scrollTo({top:y,behavior:'smooth'});
+   }));
+ }
+ function submit(){jump(pick(input.value));}
+ goBtn.addEventListener('click',submit);
+ input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();e.stopPropagation();submit();}});
+ input.addEventListener('input',()=>{
+   const q=norm(input.value);
+   if(!q){hints.innerHTML='';hints.classList.remove('show');return;}
+   const rs=routes.filter(r=>r[2].some(t=>norm(t).includes(q))||norm(r[1]).includes(q));
+   hints.innerHTML=rs.map(r=>`<button type="button" data-id="${r[0]}">${r[1]}</button>`).join('');
+   hints.classList.toggle('show',rs.length>0);
+   hints.querySelectorAll('button').forEach(b=>b.onclick=()=>jump(routes.find(r=>r[0]===b.dataset.id)));
+ });
+});
+</script><script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const sections=[...document.querySelectorAll('section')];
+ sections.forEach(s=>s.classList.add('jsReveal'));
+ const obs=new IntersectionObserver(entries=>{
+   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+ },{threshold:.08,rootMargin:'0px 0px -4% 0px'});
+ sections.forEach(s=>obs.observe(s));
+ // Anything already in viewport becomes visible immediately.
+ requestAnimationFrame(()=>sections.forEach(s=>{
+   const r=s.getBoundingClientRect();
+   if(r.top<innerHeight && r.bottom>0)s.classList.add('visible');
+ }));
+});
+</script><script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const sig=document.getElementById('signatureStage');
+ if(!sig)return;
+ let armed=true;
+ const play=()=>{
+   sig.classList.remove('signNow');
+   void sig.offsetWidth;
+   sig.classList.add('signNow');
+ };
+ const obs=new IntersectionObserver(entries=>{
+   entries.forEach(e=>{
+     if(e.isIntersecting && e.intersectionRatio>=0.45 && armed){
+       armed=false; play();
+     } else if(!e.isIntersecting){
+       armed=true; sig.classList.remove('signNow');
+     }
+   });
+ },{threshold:[0,.45,.7]});
+ obs.observe(sig);
+});
+</script></body></html>
